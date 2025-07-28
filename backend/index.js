@@ -25,11 +25,11 @@ app.post('/register', registerValidation, UserController.register)
 app.get('/me', checkAuth, UserController.getMe)
 
 //дальше будут роуты для работы с самими "днями"
-// app.get('/posts', checkAuth, DayController.getAll); //с помощью этого человек сможет получить все свои дни
-//app.get('/posts/:id', checkAuth, DayController.getOne); 
+app.get('/posts', checkAuth, DayController.getAll); //с помощью этого человек сможет получить все свои дни
+app.get('/posts/:id', checkAuth, DayController.getOne); 
 app.post('/posts', checkAuth, DayController.create); //не знаю, нужно ли создание, но пока пусть будет
-//app.delete('/posts', checkAuth, DayController.remove);
-//app.patch('/posts', checkAuth, DayController.update);
+app.delete('/posts/:id', checkAuth, DayController.remove);
+app.patch('/posts/:id', checkAuth, DayController.update);
 
 app.listen(4443, (err) => { //какой порт будет использоваться сайтом и что происходит при ошибке 
     if (err) {
