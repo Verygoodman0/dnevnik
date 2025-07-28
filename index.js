@@ -1,7 +1,7 @@
 import express from 'express'
 import mongoose from 'mongoose'
 
-import { registerValidation } from './validations/auth.js';
+import { registerValidation, loginValidation } from './validations/auth.js';
 import checkAuth from './utils/checkAuth.js';
 
 import * as UserController from './controllers/UserController.js';
@@ -19,7 +19,7 @@ app.get('/', (req, res) => { // что происходит при get запр�
     res.send('ahhhh')
 })
 
-app.post('/login', UserController.login)
+app.post('/login', loginValidation, UserController.login)
 app.post('/register', registerValidation, UserController.register)
 app.get('/me', checkAuth, UserController.getMe)
 
