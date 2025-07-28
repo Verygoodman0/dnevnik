@@ -11,3 +11,9 @@ export const loginValidation = [
     body('email', 'Неверный формат почты').isEmail(), 
     body('password', 'Пароль дожден содержать не менее 5 символов').isLength({min: 5})
 ];
+
+export const postCreateValidation = [
+    body('text', 'введите текст').isLength({min: 2}), 
+    body('avatarUrl', 'Неверная ссылка на изображение').isURL(),
+    //сюда тоже не забудь добавить другие данные 
+];

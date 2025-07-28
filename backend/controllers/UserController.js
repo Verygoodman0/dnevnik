@@ -1,18 +1,9 @@
 import jwt from 'jsonwebtoken' //библиотека для регистрации по токенам
 import bcrypt from 'bcrypt' //библиотека для шифрования паролей
-import { validationResult } from 'express-validator'; //хрень, которая проверяет наличие ошибок валидации
 import UserModel from '../models/User.js'
 
 export const register = async (req, res) => { //async значит, что функция работает асинхронно. типа доп потока для запросов к серверу
     try {
-        
-        const errors = validationResult(req);
-        if (!errors.isEmpty()){ 
-            return res.status(400).json(errors.array())
-        }
-        
-        // валидация введенных данных 
-
         const password = req.body.password;
         const salt = await bcrypt.genSalt(10); // типа алгоритма шифрования пароля
         // await приостанавливает выполнение кода внутри асинхронной функции (до окончания шифрования???)

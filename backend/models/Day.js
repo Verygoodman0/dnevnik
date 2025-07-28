@@ -8,12 +8,12 @@ const DaySchema = new mongoose.Schema( // все свойства одного �
             type: String,
             required: true,
         },
+        avatarUrl: String,
         user: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User', 
             required: true
         },
-        avatarUrl: String,
         // здесь еще нужна возможность добавления любого кол-ва фотографий и файлов  
         // еще можно добавить теги, по которым сделать быстрый поиск 
     },
