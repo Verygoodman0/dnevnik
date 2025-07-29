@@ -3,12 +3,9 @@ import mongoose from 'mongoose'
 import multer from 'multer'; //загрузка картинок???
 
 import { registerValidation, loginValidation,postCreateValidation } from './validations.js';
-import checkAuth from './utils/checkAuth.js';
+import {checkAuth, handleValidationErrors} from './utils/index.js'
+import {UserController, DayController} from './controllers/index.js'
 
-import * as UserController from './controllers/UserController.js';
-import * as DayController from './controllers/DayController.js';
-import { checkSchema } from 'express-validator';
-import handleValidationErrors from './utils/handleValidationErrors.js';
 
 mongoose
     .connect("mongodb+srv://admin:admin@cluster0.b491zih.mongodb.net/dnevnik")
