@@ -1,15 +1,20 @@
 import { useState } from 'react'
-import './App.css'
+import { Route, Routes } from 'react-router-dom'
 
 import WReg from './pages/WReg/WReg.jsx'
 import WLogin from './pages/Wlogin/Wlogin.jsx'
+import Home from './pages/Home/Home.jsx'
 
-function App() {
+const App = () => {
 
   return (
-    <div className='WregMain'>
-      <WReg/>
-    </div>
+    <>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/login' element={<WLogin/>}/>
+        <Route path='/register' element={<WReg/>}/>
+      </Routes>
+    </>
   )
 }
 

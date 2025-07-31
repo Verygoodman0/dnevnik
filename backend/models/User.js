@@ -20,6 +20,7 @@ const UserSchema = new mongoose.Schema( // все свойства пользо�
     {
         timestamps: true //автоматическая дата создания и обновления
     },
+    
 );
 
 export default mongoose.model('User', UserSchema)

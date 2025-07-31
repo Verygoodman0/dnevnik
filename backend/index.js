@@ -1,6 +1,7 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import multer from 'multer'; //загрузка картинок???
+import cors from 'cors'
 
 import { registerValidation, loginValidation,postCreateValidation } from './validations.js';
 import {checkAuth, handleValidationErrors} from './utils/index.js'
@@ -25,6 +26,7 @@ const storage = multer.diskStorage({ // хранилище для всех за�
 
 const upload = multer({storage});
 
+app.use(cors())
 app.use(express.json()) //возможность читать json
 app.use('/uploads', express.static('uploads'));
 
@@ -44,11 +46,11 @@ app.post('/upload', checkAuth, upload.single('image'), (req, res) => {
 })
 
 //дальше будут роуты для работы с самими "днями"
-app.get('/posts', checkAuth, DayController.getAll); //с помощью этого человек сможет получить все свои дни
-app.get('/posts/:id', checkAuth, DayController.getOne); 
-app.post('/posts', checkAuth, postCreateValidation, handleValidationErrors, DayController.create); //не знаю, нужно ли создание, но пока пусть будет
-app.delete('/posts/:id', checkAuth, DayController.remove);
-app.patch('/posts/:id', checkAuth, postCreateValidation, handleValidationErrors, DayController.update);
+app.get('/days', DayController.getAll); //с помощью этого человек сможет получить все свои дни
+app.get('/days/:id', checkAuth, DayController.getOne); 
+app.post('/days', checkAuth, postCreateValidation, handleValidationErrors, DayController.create); //не знаю, нужно ли создание, но пока пусть будет
+app.delete('/days/:id', checkAuth, DayController.remove);
+app.patch('/days/:id', checkAuth, postCreateValidation, handleValidationErrors, DayController.update);
 
 app.listen(4443, (err) => { //какой порт будет использоваться сайтом и что происходит при ошибке 
     if (err) {

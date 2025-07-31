@@ -8,18 +8,9 @@ function WLogin() {
   return (
     <div className='parent'>
         <Form className='WRegForm'>
-            <Form.Label className='WRegText'>Registration</Form.Label>
+            <Form.Label className='WRegText'>Login</Form.Label>
         </Form>
         <Form className='WRegForm'>
-            <Form.Group controlId="formBasicfullName">
-                <FloatingLabel
-                    controlId="floatingInput1"
-                    label="Nickname"
-                    className="mb-3"
-                >
-                    <Form.Control type="fullName" placeholder="enter your full Name" className='mb-2'/>
-                </FloatingLabel>
-            </Form.Group>
             <Form.Group controlId="formBasicEmail">
                 <FloatingLabel
                     controlId="floatingInput2"
@@ -38,11 +29,6 @@ function WLogin() {
                     <Form.Control type="password" placeholder="Password" className='mb-2'/>
                 </FloatingLabel>
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formFileLg">
-                <Form.Label className='mb-2'>Upload avatar (optional)</Form.Label>
-                <Form.Control type="file" size="lg"/>
-            </Form.Group>
-
             <Form.Group className="mb-3">
                 <Button variant="primary" type="submit" className='mb-submit'>
                     Submit

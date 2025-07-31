@@ -10,6 +10,7 @@
     justify-content: center;
     overflow: auto;
     flex-direction: column;
+    z-index: -100;
 
     background-image: url('../../assets/auth_bg.png');
     background-size: cover;
