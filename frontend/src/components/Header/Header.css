@@ -19,3 +19,18 @@
     text-decoration: none;
     color: rgb(65, 149, 155);
 }
+
+.linkLR{
+    position: absolute;
+    right: 20px;
+}
+
+.link{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.dropdown{
+    position: absolute;
+    right: 20px;
+}

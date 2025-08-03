@@ -15,7 +15,7 @@ const UserSchema = new mongoose.Schema( // все свойства пользо�
             type: String,
             required: true,
         },
-        avatarUrl: String,
+        // avatarUrl: String, <- бред
     },
     {
         timestamps: true //автоматическая дата создания и обновления

@@ -34,9 +34,9 @@ app.get('/', (req, res) => { // что происходит при get запр�
     res.send('ahhhh')
 })
 
-app.post('/login', loginValidation, handleValidationErrors, UserController.login)
-app.post('/register', registerValidation, handleValidationErrors, UserController.register)
-app.get('/me', checkAuth, UserController.getMe)
+app.post('/auth/login', loginValidation, handleValidationErrors, UserController.login)
+app.post('/auth/register', registerValidation, handleValidationErrors, UserController.register)
+app.get('/auth/me', checkAuth, UserController.getMe)
 
 app.post('/upload', checkAuth, upload.single('image'), (req, res) => {
     res.json({
