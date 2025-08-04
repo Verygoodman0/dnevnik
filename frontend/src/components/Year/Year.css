@@ -1,0 +1,10 @@
+.input_year{
+    position: relative;
+    width: 60px;
+}
+
+.form_year{
+    position: relative;
+    width: 250px;
+    top: 40px;
+}

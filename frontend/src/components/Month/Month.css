@@ -1,0 +1,14 @@
+.month_carousel{
+    position: fixed;
+    width: 100%;
+    z-index: -100;
+    top:-70px;
+}
+
+.days{
+    position: relative;
+    display: block;
+    right: 70px;
+    width: 1200px;
+    height: 600px;
+}

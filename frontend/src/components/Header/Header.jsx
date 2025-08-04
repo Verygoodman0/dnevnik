@@ -21,7 +21,7 @@ const Header = () => {
                             </h1>
                         </Link>
 
-                        <MainMenu className='dropdown'/>
+                        <MainMenu className='dropdownMenu'/>
                     </>
                 ): (
                     <>

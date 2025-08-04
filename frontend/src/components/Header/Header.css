@@ -30,7 +30,7 @@
     padding-right: 10px;
 }
 
-.dropdown{
+.dropdownMenu{
     position: absolute;
-    right: 20px;
+    left: 100%;
 }

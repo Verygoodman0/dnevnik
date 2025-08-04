@@ -16,7 +16,7 @@ const MainMenu = () => {
     return (
         <DropdownButton id="dropdown-basic-button" title='Меню'>
             {/* <Image src={props} roundedCircle /> */}
-            <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+            <Dropdown.Item href="#/action-1">Личный кабинет</Dropdown.Item>
             {/* <Dropdown.Item onClick={}"> Friends </Dropdown.Item> */}
             <Dropdown.Divider />
             <Dropdown.Item onClick={onClickLogout}>Exit</Dropdown.Item>
