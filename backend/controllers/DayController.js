@@ -51,6 +51,9 @@ export const create = async (req, res) => {
             text: req.body.text,
             avatarUrl: req.body.avatarUrl,
             user: req.userId,
+            year: req.body.year,
+            month: req.body.month,
+            day: req.body.day,
             //еще images/files, tags
         }); 
 
