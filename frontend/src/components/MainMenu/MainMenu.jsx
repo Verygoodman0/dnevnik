@@ -3,6 +3,7 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import {useDispatch} from 'react-redux';
 
 import {logout} from '../../redux/slices/auth.js'
+import './MainMenu.css'
 
 const MainMenu = () => {
     const dispatch = useDispatch();
@@ -14,7 +15,7 @@ const MainMenu = () => {
         
     };
     return (
-        <DropdownButton id="dropdown-basic-button" title='Меню'>
+        <DropdownButton id="dropdown-basic-button" title='Меню' className='dropdownMenu'>
             {/* <Image src={props} roundedCircle /> */}
             <Dropdown.Item href="#/action-1">Личный кабинет</Dropdown.Item>
             {/* <Dropdown.Item onClick={}"> Friends </Dropdown.Item> */}

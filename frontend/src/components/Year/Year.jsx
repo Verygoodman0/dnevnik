@@ -8,6 +8,12 @@ import Month from '../Month/Month';
 
 function Year() {
     const [year, setYear] = useState();
+
+    const handleSubmit = () => {
+        window.localStorage.setItem("year", year);
+    }
+
+    
     // let yearSubmit;
 
     // const handleSubmit = (event) => {
@@ -27,12 +33,12 @@ function Year() {
                         aria-label="year"
                         onChange={e => setYear(e.target.value)}
                     />
-                    {/* <Button variant="primary" type="submit" className='mb-submit'>
+                    <Button variant="primary" type="submit" className='mb-submit' onClick={handleSubmit}>
                         Submit
-                    </Button> */}
+                    </Button>
                 </InputGroup>
             </Form>
-            <Month yearInput={Number(year)}/>
+            <Month/>
         </>
     );
 };

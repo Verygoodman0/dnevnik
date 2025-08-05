@@ -13,6 +13,7 @@ function Day(props) {
   let index = props.index;
 
   let avatarUrl = 'https://avatars.mds.yandex.net/i?id=be762b5da5905e8386cd9d044cd85f01_l-4881358-images-thumbs&n=13';
+  let dayId;
 
   const dispatch = useDispatch();
   const { days } = useSelector((state) => state.days);
@@ -29,6 +30,7 @@ function Day(props) {
       if (days.items[i].year == year && days.items[i].month == month && days.items[i].day == index){
         isBlank = false;
         avatarUrl = days.items[i].avatarUrl;
+        dayId = days.items[i]._id;
       }
     }
   }
@@ -44,6 +46,7 @@ function Day(props) {
             year={year}
             month={month}
             day={index}
+            dayId={dayId}
           />
         
 

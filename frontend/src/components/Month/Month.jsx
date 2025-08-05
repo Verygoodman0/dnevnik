@@ -16,6 +16,8 @@ export default function Month(props) {
 
   const isDaysLoading = days.status == 'loading';
 
+  let yearInput = window.localStorage.getItem('year');
+
   useEffect(() => {
       dispatch(fetchDays());
   }, []);
@@ -44,7 +46,7 @@ export default function Month(props) {
               alt="Image One"
             /> 
             <Carousel.Caption>
-              <h3>{month} {props.yearInput}</h3>
+              <h3>{month} {yearInput ? yearInput : ""}</h3>
             </Carousel.Caption>
             <Carousel.Caption>
               {/* вот сюда надо уже добавлять все дни месяца и сделать им отдельный className */} 
@@ -53,7 +55,7 @@ export default function Month(props) {
                   (
                     <Day 
                       isBlank={true}
-                      year={props.yearInput} 
+                      year={yearInput} 
                       month={month} 
                       index={index+1}
                     />

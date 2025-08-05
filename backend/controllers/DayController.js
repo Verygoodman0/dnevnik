@@ -16,7 +16,7 @@ export const getAll = async (req, res) => {
 
 export const getOne = async (req, res) => {
     try {
-        const dayId = req.params.id;    
+        const dayId = req.params.id;
         const ans = await DayModel.findById({_id: dayId}) //вот это я сам писал горжусь
         res.json(ans)
 

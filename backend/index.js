@@ -50,7 +50,7 @@ app.get('/days', checkAuth, DayController.getAll); //с помощью этог�
 app.get('/days/:id', checkAuth, DayController.getOne); 
 app.post('/days', checkAuth, handleValidationErrors, DayController.create); //не знаю, нужно ли создание, но пока пусть будет
 app.delete('/days/:id', checkAuth, DayController.remove);
-app.patch('/days/:id', checkAuth, postCreateValidation, handleValidationErrors, DayController.update);
+app.patch('/days/:id', checkAuth, handleValidationErrors, DayController.update);
 
 app.listen(4443, (err) => { //какой порт будет использоваться сайтом и что происходит при ошибке 
     if (err) {

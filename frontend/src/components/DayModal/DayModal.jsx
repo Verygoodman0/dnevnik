@@ -2,6 +2,7 @@ import { useRef, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
+import { Navigate } from 'react-router-dom';
 
 import axios from '../../axios.js';
 import './DayModal.css'
@@ -13,6 +14,9 @@ function DayModal(props) {
   const [text, setText] = useState();
   const [avatarUrl, setAvatarUrl] = useState();
   
+  let isBlank = props.isBlank;
+  let avatar = props.avatarUrl;
+
   const handleChangeFile = async (event) => {
     try {
       const formData = new FormData();
@@ -26,8 +30,12 @@ function DayModal(props) {
     }
   }
 
-  const handleClose = async () => {
-    setShow(false)
+  const handleClose = () => {
+    setShow(false);
+  }
+
+  const handleSubmit = async () => {
+    setShow(false);
     setLoading(true);
 
     const fields = {
@@ -37,15 +45,13 @@ function DayModal(props) {
       "month": props.month,
       "day": props.day,
     };
-    console.log(fields);
     const { data } = await axios.post('/days', fields);
-    avatar = `http://localhost:4443${avatarUrl}`;
     isBlank = false;
-    window.location.reload()
+    avatar = `http://localhost:4443${avatarUrl}`;
+    window.location.reload();
   };
   const handleShow = () => setShow(true);
-  let isBlank = props.isBlank;
-  let avatar = props.avatarUrl;
+  
 
   return (
     <>
@@ -76,7 +82,7 @@ function DayModal(props) {
                 <Button variant="secondary" onClick={handleClose}>
                   Close
                 </Button>
-                <Button variant="primary" onClick={handleClose}>
+                <Button variant="primary" onClick={handleSubmit}>
                   Save Changes
                 </Button>
               </Modal.Footer>
@@ -90,29 +96,7 @@ function DayModal(props) {
           </Button>
 
           <Modal show={show} onHide={handleClose}>
-            <Modal.Header closeButton>
-              <Modal.Title>Редактировать запись</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              <Form>
-                <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                    <Form.Label>Редактировать текст</Form.Label>
-                    <Form.Control as="textarea" rows={5} onChange={e => setText(e.target.value)}/>
-                  </Form.Group>
-                  <Form.Group controlId="formFile" className="mb-3">
-                    <Form.Label>Default file input example</Form.Label>
-                    <Form.Control type="file" onChange={handleChangeFile}/>
-                  </Form.Group>
-              </Form>
-            </Modal.Body>
-            <Modal.Footer>
-              <Button variant="secondary" onClick={handleClose}>
-                Close
-              </Button>
-              <Button variant="primary" onClick={handleClose}>
-                Save Changes
-              </Button>
-            </Modal.Footer>
+            <Navigate to={`/days/${props.dayId}`}/>
           </Modal>
       </>
       )}
