@@ -48,7 +48,7 @@ app.post('/upload', checkAuth, upload.single('image'), (req, res) => {
 //дальше будут роуты для работы с самими "днями"
 app.get('/days', checkAuth, DayController.getAll); //с помощью этого человек сможет получить все свои дни
 app.get('/days/:id', checkAuth, DayController.getOne); 
-app.post('/days', checkAuth, postCreateValidation, handleValidationErrors, DayController.create); //не знаю, нужно ли создание, но пока пусть будет
+app.post('/days', checkAuth, handleValidationErrors, DayController.create); //не знаю, нужно ли создание, но пока пусть будет
 app.delete('/days/:id', checkAuth, DayController.remove);
 app.patch('/days/:id', checkAuth, postCreateValidation, handleValidationErrors, DayController.update);
 

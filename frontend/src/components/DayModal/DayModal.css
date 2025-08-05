@@ -5,7 +5,11 @@
     width: 120px;
     height: 120px;
     border-radius: 120px;
-    border: 3px solid rgb(255, 255, 255);
+    border: 3px solid rgb(179, 179, 179);
+}
+
+.day_icon:hover{
+    border-color: rgb(0, 0, 0);
 }
 
 .day_button{
@@ -13,5 +17,35 @@
     width: 120px;
     height: 120px;
     border-radius: 120px;
-    border: 3px solid rgb(255, 255, 255);
+    border: 3px solid rgb(128, 128, 128);
+}
+
+.day_iconText_1{
+    position: absolute;
+    right: 43px;
+    top: 0;
+    background-color: gray;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 50%;
+}
+
+.day_iconText_2{
+    position: absolute;
+    right: 40px;
+    top: 0;
+    background-color: gray;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 50%;
+}
+
+.day_button:hover{
+    border-color: rgb(106, 228, 255);
+    .day_iconText_1{
+        display: none;
+    }
+    .day_iconText_2{
+        display: none;
+    }
 }

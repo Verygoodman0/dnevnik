@@ -15,5 +15,8 @@ export const loginValidation = [
 export const postCreateValidation = [
     body('text', 'введите текст').isLength({min: 2}), 
     body('avatarUrl', 'Неверная ссылка на изображение').isURL(),
+    body('day', 'Неверная ссылка на изображение').isNumeric(),
+    body('month', 'Неверная ссылка на изображение').isString(),
+    body('year', 'Неверная ссылка на изображение').isNumeric(),
     //сюда тоже не забудь добавить другие данные 
 ];

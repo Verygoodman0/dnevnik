@@ -14,7 +14,7 @@ function Year() {
     //     event.preventDefault();
 
     //     yearSubmit = year;
-    //     console.log(yearSubmit);
+    //     console.log(yearSubmit); 
     // };
 
     return(
@@ -32,7 +32,7 @@ function Year() {
                     </Button> */}
                 </InputGroup>
             </Form>
-            <Month yearInput={year}/>
+            <Month yearInput={Number(year)}/>
         </>
     );
 };

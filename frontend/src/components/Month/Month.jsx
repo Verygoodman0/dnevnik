@@ -24,7 +24,7 @@ export default function Month(props) {
     <div className='month_carousel'>
       <Carousel>
         {[
-          "Январь",
+          "январь",
           "февраль", 
           "март", 
           "апрель", 
@@ -37,7 +37,7 @@ export default function Month(props) {
           "ноябрь", 
           "декабрь" 
         ].map((month) => (
-          <Carousel.Item interval={1000000}>
+          <Carousel.Item interval={100000000}>
             <img
               className="d-block w-100"
               src="https://avatars.mds.yandex.net/i?id=7fac920a7130245d9d762f8ec0aa922a_l-12367219-images-thumbs&n=13"
@@ -47,19 +47,22 @@ export default function Month(props) {
               <h3>{month} {props.yearInput}</h3>
             </Carousel.Caption>
             <Carousel.Caption>
-              {/* вот сюда надо уже добавлять все дни месяца и сделать им отдельный className */}
+              {/* вот сюда надо уже добавлять все дни месяца и сделать им отдельный className */} 
               <div className='days'>
-                {(isDaysLoading ? [...Array(30)] : [...Array(30)]).map((obj,index) => 
-                  isDaysLoading ? (
-                    <Day isBlank={true}/>
-                  ) : (
-                    <Day isBlank={false} year={props.yearInput} month={month} index={index}/>
+                {([...Array(30)]).map((obj, index) => 
+                  (
+                    <Day 
+                      isBlank={true}
+                      year={props.yearInput} 
+                      month={month} 
+                      index={index+1}
+                    />
                   ),
-                )};
+                )}
               </div>
             </Carousel.Caption>
           </Carousel.Item>
-        ))};  
+        ))} 
         </Carousel>
     </div>
   );
