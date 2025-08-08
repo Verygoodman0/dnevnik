@@ -55,6 +55,7 @@ export default function Month(props) {
                   (
                     <Day 
                       isBlank={true}
+                      isBig={false}
                       year={yearInput} 
                       month={month} 
                       index={index+1}

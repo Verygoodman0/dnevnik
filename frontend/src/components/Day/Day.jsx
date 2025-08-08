@@ -11,6 +11,7 @@ function Day(props) {
   let year = props.year;
   let month = props.month;
   let index = props.index;
+  let isBig = props.isBig;
 
   let avatarUrl = 'https://avatars.mds.yandex.net/i?id=be762b5da5905e8386cd9d044cd85f01_l-4881358-images-thumbs&n=13';
   let dayId;
@@ -47,6 +48,7 @@ function Day(props) {
             month={month}
             day={index}
             dayId={dayId}
+            isBig={isBig}
           />
         
 

@@ -17,7 +17,7 @@ const Header = () => {
                     <>
                         <Link to="/" className='linkH'>
                             <h1>
-                                Home
+                                Dnevnik
                             </h1>
                         </Link>
 

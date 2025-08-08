@@ -1,11 +1,19 @@
 .day_icon{
     position: relative;
-    left: -14.5px;
-    top: -8.5px;
+    left: -10px;
+    top: -5px;
+    border-radius: 50%;
+    border: 3px solid rgb(179, 179, 179);
+}
+
+.small{
     width: 120px;
     height: 120px;
-    border-radius: 120px;
-    border: 3px solid rgb(179, 179, 179);
+}
+
+.big{
+    width: 600px;
+    height: 600px;
 }
 
 .day_icon:hover{
@@ -14,9 +22,7 @@
 
 .day_button{
     position: relative;
-    width: 120px;
-    height: 120px;
-    border-radius: 120px;
+    border-radius: 50%;
     border: 3px solid rgb(128, 128, 128);
 }
 
@@ -48,4 +54,29 @@
     .day_iconText_2{
         display: none;
     }
+}
+
+.add_avatar{
+    position: relative;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: #6FC19B;
+    border: 3px solid #6FC19B;
+
+    left: -10px;
+}
+
+.add_avatar_img{
+    height: 102px;
+    width: 102px;
+    position: relative;
+    left: -8px;
+    top: -5px;
+    border-radius: 50%;
+    border: 3px solid #6FC19B;
+}
+
+.add_avatar_img:hover{
+    border-color: #449d74;
 }
