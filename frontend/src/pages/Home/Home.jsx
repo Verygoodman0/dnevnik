@@ -58,9 +58,9 @@ const Home = () => {
 
     return(
         <>
+            <Header/>
             {isAuth ? (
                 <>
-                    <Header/>
                     <Link to='/days' className='link_days'>
                         <h1>Other days</h1>
                     </Link>

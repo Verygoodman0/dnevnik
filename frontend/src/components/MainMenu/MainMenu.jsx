@@ -1,9 +1,11 @@
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import {useDispatch} from 'react-redux';
+import { Navigate } from 'react-router-dom';
 
 import {logout} from '../../redux/slices/auth.js'
 import './MainMenu.css'
+import Home from '../../pages/Home/Home.jsx';
 
 const MainMenu = () => {
     const dispatch = useDispatch();
@@ -11,6 +13,8 @@ const MainMenu = () => {
         if (window.confirm('Вы действительно хотите выйти?')){
             dispatch(logout());
             window.localStorage.removeItem('token');
+            window.localStorage.removeItem('year');
+            window.location.reload();
         };
         
     };

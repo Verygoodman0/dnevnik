@@ -39,7 +39,11 @@ function FullPost(){
                 </tr>
             </table>
             <h4 className="fullpost_text">{data.text}</h4>
-            вот здесь дальше просто идут остальные загруженные ранее изображения 
+            {data.images.map((imageUrl) => (
+                <>
+                    <img src={imageUrl} alt="loading..." className='fullpost_image'/>
+                </>
+            ))}
         </>
     );
 }

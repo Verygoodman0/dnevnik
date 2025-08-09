@@ -54,7 +54,7 @@ export const create = async (req, res) => {
             year: req.body.year,
             month: req.body.month,
             day: req.body.day,
-            //еще images/files, tags
+            images: req.body.images,
         }); 
 
         const day = await doc.save();

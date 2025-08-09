@@ -14,9 +14,10 @@ const DaySchema = new mongoose.Schema( // все свойства одного �
             ref: 'User', 
             required: true
         },
-        year: { type: Number, required: true,},
+        year: { type: String, required: true,},
         month: { type: String, required: true,}, //это пиздец какое плохое решение наверное 
         day: { type: Number, required: true,},
+        images: {type: Array, required: false,}
         // здесь еще нужна возможность добавления любого кол-ва фотографий и файлов  
         // надо придумать как подтянуть эти данные с фронта (ахуеть)
     },
